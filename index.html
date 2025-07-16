@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registration Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+    }
+    .left, .right {
+      flex: 1;
+      max-width: 50%;
+      height: auto;
+      color: #fff;
+      padding: 40px;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    .left h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 2px 2px 8px #000;
+    }
+    .left p {
+      font-size: 20px;
+      color: #ddd;
+    }
+    .right {
+      background: rgba(255,255,255,0.85);
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .right h2 {
+      color: #2575fc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .right label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: bold;
+    }
+    .right input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .right button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2575fc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .right button:hover {
+      background-color: #6a11cb;
+    }
+    #message {
+      color: green;
+      margin-top: 10px;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop>
+    <source src="front_background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <!-- LEFT SIDE -->
+    <div class="left">
+      <h1>Welcome to Cognifyz!</h1>
+      <p>Unlock a world of opportunities. <br> Join us and experience seamless solutions.</p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <h2>Register Here</h2>
+      <form action="/submit" method="POST" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" />
+
+        <button type="submit">Submit</button>
+      </form>
+      <p id="message">Form validated successfully!</p>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const age = document.getElementById('age').value.trim();
+
+      if (!name || !email || !age) {
+        alert("All fields are required!");
+        return false;
+      }
+
+      document.getElementById('message').style.display = 'block';
+      return true;
+    }
+  </script>
+</body>
+</html>
