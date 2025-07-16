@@ -6,7 +6,6 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// Serve static files like images, videos, etc.
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -14,7 +13,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// MODERN SPLIT SUCCESS PAGE
 app.get('/success', (req, res) => {
   res.send(`
     <!DOCTYPE html>
@@ -113,13 +111,11 @@ app.get('/success', (req, res) => {
       </video>
 
       <div class="container">
-        <!-- LEFT SIDE -->
         <div class="left">
           <h1>Welcome to Cognifyz!</h1>
           <p>Transforming your future with innovative solutions.<br> Thank you for joining us!</p>
         </div>
 
-        <!-- RIGHT SIDE -->
         <div class="right">
           <h2>🎉 Registration Successful!</h2>
           <p>Thank you for registering.<br>Your information has been saved successfully!</p>
