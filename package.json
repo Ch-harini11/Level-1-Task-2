@@ -14,5 +14,13 @@
     "express": "^5.1.0",
     "fs": "^0.0.1-security"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ch-harini11/Level-1-Task-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ch-harini11/Level-1-Task-2/issues"
+  },
+  "homepage": "https://github.com/Ch-harini11/Level-1-Task-2#readme",
   "description": ""
 }
